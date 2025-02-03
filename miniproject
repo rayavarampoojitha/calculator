@@ -11,7 +11,7 @@ int mul(int a,int b)
 {
   return a * b;
 }
-int div(int a,int b)
+void div(int a,int b)
 {
   if(b == 0)
   {
@@ -19,7 +19,7 @@ int div(int a,int b)
   }
   else
   {
-    printf("Division : %d\n", a/b);
+    printf("Division : %d\n", a / b);
   }
 }
 int main()
@@ -36,9 +36,14 @@ int main()
        printf(" 5.Exit \n");
     
      printf("Enter your choice\n");
-       scanf("%d", &choice);
+     scanf("%d", &choice);
+     if (choice == 5) 
+    {
+         break;
+    }
     printf("Enter two numbers:\n");
     scanf("%d %d", &a,&b);
+    
     switch(choice)
     {
       case 1:
@@ -51,15 +56,36 @@ int main()
           printf("Multiplication of two numbers: %d\n", mul(a,b));
           break;
       case 4:
-          printf("Division of two numbers: %d\n", div(a,b));
+          div(a,b);
           break;
-      case 5:
-            printf("Exit\n");
-            printf("Program Terminated\n");
       default:
-           printf("Enter correct choice\n");
+            printf("Invalid choice!\n");
     }
 
 }
     return 0;
 }
+Input/Output:
+
+Input:
+ USER MENU:
+ 1.Addition:
+ 2.Subtraction
+ 3.Multiplication
+ 4.Division
+ 5.Exit
+ Enter your choice:
+ 1
+ Enter two numbers: 2 3
+Output:
+USER MENU:
+ 1.Addition:
+ 2.Subtraction
+ 3.Multiplication
+ 4.Division
+ 5.Exit
+ Enter your choice:
+ 1
+ Enter two numbers: 2 3
+ Addition of two numbers: 5
+
